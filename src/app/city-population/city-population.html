@@ -1,0 +1,17 @@
+<h1 style="text-align: center;">City Population</h1>
+<div class="city-population-container">
+  <table>
+    <thead>
+      <tr>
+        <th>City</th>
+        <th>Population</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let city of populationData | slice:0:10">
+        <td>{{ city.city }}</td>
+        <td>{{ city.populationCounts?.[0]?.value }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

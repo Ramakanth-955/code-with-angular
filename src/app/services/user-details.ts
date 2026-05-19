@@ -1,26 +1,15 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
-export class User {
+export class UserDetailsService {
   api = 'https://jsonplaceholder.typicode.com/users';
-  friends: string[] = ['Rahul','Kiran','Arjun','Sai','Vikram'];
-
   constructor(private http: HttpClient) { }
-
-  getName() {
-    return 'Ramakanth Reddy';
-  }
-
-  getFriends(){
-    return this.friends;
-  }
 
   getuserDeatails(){
     const usersdetails = this.http.get(this.api);
     return usersdetails;
   }
-  
 }

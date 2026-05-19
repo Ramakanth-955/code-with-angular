@@ -4,17 +4,25 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { UserData } from './user-data/user-data';
+import { HttpClientModule } from '@angular/common/http';
+import { UserDetails } from './user-details/user-details';
+import { UserDetailsService } from './services/user-details';
+import { CityPopulation } from './city-population/city-population';
 
 @NgModule({
   declarations: [
     App,
-    UserData
+    UserData,
+    UserDetails,
+    CityPopulation
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
+    UserDetailsService,
     provideBrowserGlobalErrorListeners(),
     provideClientHydration(withEventReplay())
   ],
